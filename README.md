@@ -9,10 +9,6 @@
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Features](#features)
-- [Installation](#installation)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -31,16 +27,6 @@ To use the `ft_printf` function in your project, follow these steps:
 ## Features
 
 - Support for various format specifiers (e.g., `%s`, `%d`, `%c`, `%p`).
-- Customizable width, precision, and flags (e.g., `-`, `0`, `+`).
 - Handles variadic arguments.
 - Error handling for invalid format strings.
 - Written in C language for portability.
-
-## Installation
-
-To compile and test the `ft_printf` project, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Compile the project using the provided `Makefile`:
-   ```shell
-   make
