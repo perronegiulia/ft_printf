@@ -1,34 +1,3 @@
-#include "ft_printf.h"
-
-int main() {
-    char *name = "John";
-    int age = 30;
-    ft_printf("Hello, my name is %s and I am %d years old.\n", name, age);
-    return (0);
-}
-This code will print:
-
-csharp
-Copy code
-Hello, my name is John and I am 30 years old.
-Contributing
-Contributions to this project are welcome. You can contribute by opening issues, suggesting improvements, or submitting pull requests. Please make sure to follow the 42 School's guidelines and coding standards.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Happy coding!
-
-
-
-
-User
-write it in a way that i can just copy and paste
-ChatGPT
-Certainly! Here's a copy-and-paste-ready README.md for your ft_printf project:
-
-markdown
-Copy code
 # ft_printf - 42 School Project
 
 ![42 Logo](https://img.shields.io/badge/42%20School-ft_printf-2C2C2C)
