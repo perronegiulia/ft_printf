@@ -3,6 +3,7 @@
 
 // va_start - initialise the vector, a va_list object that you can use to access each argument after the flag.
 // va_arg - take the next argument.
+// ap is a pointer but doesn't have *, because va_list is already defined as a pointer.
 
 float average(int n, ...)
 {
