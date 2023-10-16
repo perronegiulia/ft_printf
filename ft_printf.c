@@ -1,7 +1,4 @@
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "ft_printf.h"
 
 int print_char(int c)
 {
@@ -51,9 +48,9 @@ int print_format(char specifier, va_list ap)
     count += print_char(va_arg(ap, int));
   else if (specifier == 's')
     count += print_str(va_arg(ap, char *));
-  else if (specifier == 'd')
+  else if (specifier == 'd' || specifier == 'i' || specifier == 'u')
     count += print_digit((long)(va_arg(ap, int)), 10);
-  else if (specifier == 'x')
+  else if (specifier == 'x' || specifier == 'X' || specifier == 'p')
     count += print_digit((long)(va_arg(ap, unsigned int)), 16);
   else
     count += write(1, &specifier, 1);
@@ -82,7 +79,7 @@ int ft_printf(const char *format, ...)
 int main ()
 {
   int count;
-  ft_printf("Hello %s, today is %d, in hex %x, char -> %c\n", "Giulia", 27, 27, 'z');
+  ft_printf("Hello %s, you got this %i%% right, today is %d, in hex %x, char -> %c\n", "Giulia",100, 27, 27, 'z');
 /*
   //count = ft_printf("hello %s\n", "giulia");
   //ft_printf("the char written are %d\n", count);
