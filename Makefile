@@ -1,5 +1,5 @@
-OBJS = *.o
-FILES = *.c
+CFILES	= $(filter-out $(wildcard *_bonus.c), $(wildcard *.c))
+OBJS	= $(CFILES:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a

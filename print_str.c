@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 21:36:39 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 21:36:41 by gmaia-pe         ###   ########.fr       */
+/*   Created: 2023/10/16 18:36:38 by gmaia-pe          #+#    #+#             */
+/*   Updated: 2023/10/16 21:45:02 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdio.h>
+int	print_str(char *str)
+{
+	int	count;
 
-int		ft_printf(const char *format, ...);
-int		print_format(char specifier, va_list ap);
-int		print_digit(long n, int base, char specifier);
-int		print_char(int c);
-int		print_str(char *str);
-int		ft_printptr(size_t n);
-
-#endif
+	count = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (count + 6);
+	}
+	while (*str)
+	{
+		print_char((char)*str);
+		count++;
+		str++;
+	}
+	return (count);
+}
