@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_digit.c                                      :+:      :+:    :+:   */
+/*   print_ptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:34:02 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 23:56:51 by gmaia-pe         ###   ########.fr       */
+/*   Created: 2023/10/16 23:55:24 by gmaia-pe          #+#    #+#             */
+/*   Updated: 2023/10/16 23:58:09 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h" 
+#include "ft_printf.h"
 
-int	print_digit(long n, char *base, char specifier)
+int	print_ptr(size_t n, char *base)
 {
-	int		count;
-	int		base_len;
+	int	count;
+	int	base_len;
 
 	base_len = ft_strlen(base);
-	if (specifier == 'u')
-		n = (unsigned int)n;
-	if (n < 0)
+	count = 0;
+	if (n == 0)
+		return (write(1, "(nil)", 5));
+	if (n < 16)
 	{
-		write(1, "-", 1);
-		return (print_digit(-n, base, specifier) + 1);
+		write(1, "0x", 2);
+		count += print_digit(n, base, 'x') + 2;
 	}
-	else if (n < base_len)
-		return (print_char(base[n]));
 	else
 	{
-		count = print_digit(n / base_len, base, specifier);
-		return (count + print_digit(n % base_len, base, specifier));
+		write(1, "0x", 2);
+		count += print_digit(n / base_len, base, 'x') + 2;
+		count += print_digit(n % base_len, base, 'x');
 	}
+	return (count);
 }

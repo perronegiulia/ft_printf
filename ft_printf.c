@@ -6,7 +6,7 @@
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:35:54 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 21:36:10 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:06:01 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ int	print_format(char specifier, va_list ap)
 	else if (specifier == 's')
 		count += print_str(va_arg(ap, char *));
 	else if (specifier == 'd' || specifier == 'i' || specifier == 'u')
-		count += print_digit((long)(va_arg(ap, int)), 10, specifier);
-	else if (specifier == 'x' || specifier == 'X')
-		count += print_digit((long)(va_arg(ap, unsigned int)), 16, specifier);
+		count += print_digit((long)(va_arg(ap, int)), DECIMAL, specifier);
+	else if (specifier == 'x')
+		count += print_digit((long)(va_arg(ap, unsigned int)), HEXL, specifier);
+	else if (specifier == 'X')
+		count += print_digit((long)(va_arg(ap, unsigned int)), HEXU, specifier);
 	else if (specifier == 'p')
-		count += ft_printptr(va_arg(ap, size_t));
+		count += print_ptr(va_arg(ap, size_t), HEXL);
 	else
 		count += write(1, &specifier, 1);
 	return (count);

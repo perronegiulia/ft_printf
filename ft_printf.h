@@ -6,7 +6,7 @@
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:36:39 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 21:36:41 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:05:39 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,17 @@
 # include <stdarg.h>
 # include <stdio.h>
 
+# define DECIMAL   "0123456789"
+# define HEXL "0123456789abcdef"
+# define HEXU "0123456789ABCDEF"
+
 int		ft_printf(const char *format, ...);
+size_t	ft_strlen(const char *str);
 int		print_format(char specifier, va_list ap);
-int		print_digit(long n, int base, char specifier);
+int		print_digit(long n, char *base, char specifier);
 int		print_char(int c);
 int		print_str(char *str);
-int		ft_printptr(size_t n);
+int		print_ptr(size_t n, char *base);
+int		putnbr_base(long n, char *base, char specifier);
 
 #endif

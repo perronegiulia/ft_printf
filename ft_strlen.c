@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 18:36:38 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 23:00:33 by gmaia-pe         ###   ########.fr       */
+/*   Created: 2023/10/03 20:14:58 by gmaia-pe          #+#    #+#             */
+/*   Updated: 2023/10/16 23:49:06 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_str(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	count;
+	size_t	i;
 
-	count = 0;
-	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (*str)
-	{
-		print_char((char)*str);
-		count++;
-		str++;
-	}
-	return (count);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

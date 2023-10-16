@@ -11,7 +11,7 @@ float average(int n, ...)
   int total;
   int i;
 
-  va_start(ap, n); // a macro, we wnat to skip the n, with the n we are saying how many arguments we have there.
+  va_start(ap, n); // a macro, we want to skip the n, with the n we are saying how many arguments we have there.
   total = 0;
   i = 0;
 
@@ -26,7 +26,7 @@ float average(int n, ...)
 int main()
 {
   float average_age;
-                      //this 5 is a flag and the other number are the actual arguments.
+                      //this 5 is a flag and the other numbers are the actual arguments.
   average_age = average(5, 18, 45, 32, 100, 7);
   printf("the average age of those 5 people is %f\n", average_age);
 }
