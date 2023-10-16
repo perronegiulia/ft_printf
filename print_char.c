@@ -6,13 +6,13 @@
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:37:13 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 21:38:01 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:15:21 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_char(int c)
+int	ft_print_char(int c)
 {
 	return (write(1, &c, 1));
 }

@@ -6,13 +6,13 @@
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:36:38 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 23:00:33 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:16:16 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_str(char *str)
+int	ft_print_str(char *str)
 {
 	int	count;
 
@@ -24,7 +24,7 @@ int	print_str(char *str)
 	}
 	while (*str)
 	{
-		print_char((char)*str);
+		ft_print_char((char)*str);
 		count++;
 		str++;
 	}

@@ -6,13 +6,13 @@
 /*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 23:55:24 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/16 23:58:09 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:17:00 by gmaia-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_ptr(size_t n, char *base)
+int	ft_print_ptr(size_t n, char *base)
 {
 	int	count;
 	int	base_len;
@@ -24,13 +24,13 @@ int	print_ptr(size_t n, char *base)
 	if (n < 16)
 	{
 		write(1, "0x", 2);
-		count += print_digit(n, base, 'x') + 2;
+		count += ft_print_digit(n, base, 'x') + 2;
 	}
 	else
 	{
 		write(1, "0x", 2);
-		count += print_digit(n / base_len, base, 'x') + 2;
-		count += print_digit(n % base_len, base, 'x');
+		count += ft_print_digit(n / base_len, base, 'x') + 2;
+		count += ft_print_digit(n % base_len, base, 'x');
 	}
 	return (count);
 }
