@@ -3,38 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmaia-pe <gmaia-pe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maia <maia@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:35:54 by gmaia-pe          #+#    #+#             */
-/*   Updated: 2023/10/17 00:23:05 by gmaia-pe         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:32:21 by maia             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_print_format(char specifier, va_list ap)
-{
-	int	count;
-
-	count = 0;
-	if (specifier == 'c')
-		count += ft_print_char(va_arg(ap, int));
-	else if (specifier == 's')
-		count += ft_print_str(va_arg(ap, char *));
-	else if (specifier == 'd' || specifier == 'i' || specifier == 'u')
-		count += ft_print_digit((long)(va_arg(ap, int)), DECIMAL, specifier);
-	else if (specifier == 'x')
-		count += ft_print_digit((long)(va_arg(ap, unsigned int)), HEXL,
-				specifier);
-	else if (specifier == 'X')
-		count += ft_print_digit((long)(va_arg(ap, unsigned int)), HEXU,
-				specifier);
-	else if (specifier == 'p')
-		count += ft_print_ptr(va_arg(ap, size_t), HEXL);
-	else
-		count += write(1, &specifier, 1);
-	return (count);
-}
 
 int	ft_printf(const char *format, ...)
 {
@@ -58,7 +34,7 @@ int	ft_printf(const char *format, ...)
 int main ()
 {
   int count;
-  ft_printf("Hello %s, you got this %i%% right, today is %d, 
+  ft_printf("Hello %s, you got this %i%% right, today is %d,
   in hex %X, char -> %c\n", "Giulia",100, 27, 27, 'z');
 	retu
 
